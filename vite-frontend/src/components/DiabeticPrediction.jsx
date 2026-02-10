@@ -99,14 +99,18 @@ const DiabeticPredictionForm = () => {
         </div>
 
         {/* Form */}
-        <form ref={formRef} onSubmit={handleSubmit} className="bg-white rounded-xl shadow-sm border border-slate-200">
+        <form
+          ref={formRef}
+          onSubmit={handleSubmit}
+          className="bg-white rounded-xl shadow-sm border border-slate-200"
+        >
           <div className="p-8">
             {/* Personal Information */}
             <div className="mb-10">
               <h2 className="text-xl font-semibold text-slate-800 mb-6 pb-3 border-b border-slate-200">
                 Personal Information
               </h2>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-2">
@@ -115,6 +119,8 @@ const DiabeticPredictionForm = () => {
                   <input
                     type="number"
                     name="age"
+                    min={0}
+                    max={100}
                     defaultValue={initialFormData.age}
                     onChange={handleChange}
                     className="w-full px-4 py-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition"
@@ -147,7 +153,7 @@ const DiabeticPredictionForm = () => {
               <h2 className="text-xl font-semibold text-slate-800 mb-6 pb-3 border-b border-slate-200">
                 Physical Measurements
               </h2>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-2">
@@ -157,6 +163,8 @@ const DiabeticPredictionForm = () => {
                     type="number"
                     step="0.1"
                     name="bmi"
+                    min={0}
+                    max={50}
                     defaultValue={initialFormData.bmi}
                     onChange={handleChange}
                     className="w-full px-4 py-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition"
@@ -172,6 +180,8 @@ const DiabeticPredictionForm = () => {
                   <input
                     type="number"
                     name="waist_circumference_cm"
+                    min={0}
+                    max={200}
                     defaultValue={initialFormData.waist_circumference_cm}
                     onChange={handleChange}
                     className="w-full px-4 py-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition"
@@ -187,6 +197,8 @@ const DiabeticPredictionForm = () => {
                   <input
                     type="number"
                     name="blood_pressure"
+                    min={0}
+                    max={300}
                     defaultValue={initialFormData.blood_pressure}
                     onChange={handleChange}
                     className="w-full px-4 py-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition"
@@ -202,7 +214,7 @@ const DiabeticPredictionForm = () => {
               <h2 className="text-xl font-semibold text-slate-800 mb-6 pb-3 border-b border-slate-200">
                 Clinical Measurements
               </h2>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-2">
@@ -212,6 +224,8 @@ const DiabeticPredictionForm = () => {
                     type="number"
                     step="0.1"
                     name="insulin_level"
+                    min={0}
+                    max={100}
                     defaultValue={initialFormData.insulin_level}
                     onChange={handleChange}
                     className="w-full px-4 py-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition"
@@ -227,6 +241,8 @@ const DiabeticPredictionForm = () => {
                   <input
                     type="number"
                     name="cholesterol_level"
+                    min={0}
+                    max={300}
                     defaultValue={initialFormData.cholesterol_level}
                     onChange={handleChange}
                     className="w-full px-4 py-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition"
@@ -242,6 +258,8 @@ const DiabeticPredictionForm = () => {
                   <input
                     type="number"
                     name="triglycerides_level"
+                    min={0}
+                    max={300}
                     defaultValue={initialFormData.triglycerides_level}
                     onChange={handleChange}
                     className="w-full px-4 py-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition"
@@ -257,7 +275,7 @@ const DiabeticPredictionForm = () => {
               <h2 className="text-xl font-semibold text-slate-800 mb-6 pb-3 border-b border-slate-200">
                 Lifestyle Factors
               </h2>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-2">
@@ -266,6 +284,8 @@ const DiabeticPredictionForm = () => {
                   <input
                     type="number"
                     name="daily_calorie_intake"
+                    min={0}
+                    max={10000}
                     defaultValue={initialFormData.daily_calorie_intake}
                     onChange={handleChange}
                     className="w-full px-4 py-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition"
@@ -281,6 +301,8 @@ const DiabeticPredictionForm = () => {
                   <input
                     type="number"
                     name="sugar_intake_grams_per_day"
+                    min={0}
+                    max={500}
                     defaultValue={initialFormData.sugar_intake_grams_per_day}
                     onChange={handleChange}
                     className="w-full px-4 py-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition"
@@ -297,6 +319,8 @@ const DiabeticPredictionForm = () => {
                     type="number"
                     step="0.1"
                     name="sleep_hours"
+                    min={0}
+                    max={24}
                     defaultValue={initialFormData.sleep_hours}
                     onChange={handleChange}
                     className="w-full px-4 py-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition"
@@ -311,8 +335,8 @@ const DiabeticPredictionForm = () => {
                   </label>
                   <input
                     type="number"
-                    min="1"
-                    max="10"
+                    min={1}
+                    max={10}
                     name="stress_level"
                     defaultValue={initialFormData.stress_level}
                     onChange={handleChange}
@@ -347,7 +371,7 @@ const DiabeticPredictionForm = () => {
               <h2 className="text-xl font-semibold text-slate-800 mb-6 pb-3 border-b border-slate-200">
                 Medical History
               </h2>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-2">
@@ -378,17 +402,32 @@ const DiabeticPredictionForm = () => {
             >
               {loading ? (
                 <span className="flex items-center justify-center">
-                  <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  <svg
+                    className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    ></circle>
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    ></path>
                   </svg>
                   Processing...
                 </span>
               ) : (
-                'Predict Risk'
+                "Predict Risk"
               )}
             </button>
-            
+
             <button
               type="button"
               onClick={handleReset}
@@ -401,7 +440,8 @@ const DiabeticPredictionForm = () => {
 
         {/* Info Footer */}
         <div className="mt-6 text-center text-sm text-slate-500">
-          This assessment is for informational purposes only and does not replace professional medical advice.
+          This assessment is for informational purposes only and does not
+          replace professional medical advice.
         </div>
       </div>
     </div>
