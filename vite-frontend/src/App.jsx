@@ -26,6 +26,8 @@ import CustomerSettings from './pages/CustomerSettings.jsx';
 import DoctorSettings from './pages/DoctorSettings.jsx';
 import SymptomChecker from './pages/SymptomChecker.jsx';
 import ProfileSetup from './pages/ProfileSetup.jsx';
+// Diabetes Prediction Page
+import DiabeticPredictionForm from "./components/DiabeticPrediction.jsx";
 
 export default function App() {
   return (
@@ -36,7 +38,7 @@ export default function App() {
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/signup/customer" element={<CustomerSignup />} />
         <Route path="/signup/doctor" element={<DoctorSignup />} />
-        
+        <Route path="/predict/diabetes" element={<DiabeticPredictionForm />} />
         {/* NEW LAB SIGNUP ROUTE */}
         <Route path="/signup/lab" element={<LabSignup />} />
         
