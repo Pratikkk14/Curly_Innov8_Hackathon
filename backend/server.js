@@ -6,6 +6,10 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3001;
 const chatRoutes = require('./routes/chatRoutes'); 
+const axios = require("axios");
+const FormData = require("form-data");
+const fileUpload = require("express-fileupload");
+app.use(fileUpload());
 
 // Connect to Database
 connectDB();
@@ -45,6 +49,32 @@ app.use("/api/reports", require("./routes/reports")); // For all lab test reques
 
 // Chat Route
 app.use('/api/chat', chatRoutes); 
+
+app.post("/api/skin-disease", async (req, res) => {
+  try {
+    if (!req.files || !req.files.image) {
+      return res.status(400).json({ error: "Image not provided" });
+    }
+
+    const formData = new FormData();
+    formData.append(
+      "image",
+      req.files.image.data,
+      req.files.image.name
+    );
+
+    const response = await axios.post(
+      "http://localhost:5001/predict-skin",
+      formData,
+      { headers: formData.getHeaders() }
+    );
+
+    return res.json(response.data);
+  } catch (err) {
+    console.error("Skin ML error:", err.message);
+    return res.status(500).json({ error: "Skin prediction failed" });
+  }
+});
 
 app.listen(PORT, () => {
     console.log(`Server Listening at http://localhost:${PORT}`);

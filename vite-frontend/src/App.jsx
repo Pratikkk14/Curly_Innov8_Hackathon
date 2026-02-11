@@ -6,6 +6,11 @@ import SignupPage from './pages/SignupPage.jsx';
 import CustomerSignup from './pages/CustomerSignup.jsx';
 import DoctorSignup from './pages/DoctorSignup.jsx';
 import ViewProfile from './pages/ViewProfile.jsx';
+import SkinDiseaseDetection from "./pages/SkinDiseaseDetection";
+import OralCancerDetection from "./pages/OralCancerDetection";
+
+
+
 // NEW LAB IMPORTS
 import LabSignup from './pages/LabSignup.jsx';
 import LabDashboard from './pages/LabDashboard.jsx';
@@ -26,8 +31,7 @@ import CustomerSettings from './pages/CustomerSettings.jsx';
 import DoctorSettings from './pages/DoctorSettings.jsx';
 import SymptomChecker from './pages/SymptomChecker.jsx';
 import ProfileSetup from './pages/ProfileSetup.jsx';
-// Diabetes Prediction Page
-import DiabeticPredictionForm from "./components/DiabeticPrediction.jsx";
+import BrainTumorDetection from "./pages/ModelPrediction.jsx";
 
 export default function App() {
   return (
@@ -68,7 +72,12 @@ export default function App() {
         <Route path="/lab/reports" element={<LabReports />} /> {/* List of pending/completed tests */}
         <Route path="/lab/reports/upload/:reportId" element={<LabReportUpload />} /> {/* Report upload specific page */}
         <Route path="/lab/settings" element={<LabSettings />} />
-        
+
+
+        <Route path="/prediction" element={<BrainTumorDetection />} />
+        <Route path="/skin-prediction" element={<SkinDiseaseDetection />} />
+        <Route path="/oral-prediction" element={<OralCancerDetection />} />
+
       </Routes>
     </Router>
   );

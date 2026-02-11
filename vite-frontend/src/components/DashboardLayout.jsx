@@ -96,6 +96,14 @@ function Sidebar({ activeItem = 'dashboard', userProfile }) {
           icon={<Settings size={20} />} text="View Profile"
           active={activeItem === 'view-profile'} onClick={() => handleNavigation('/customer/profile')}
         />
+        <SidebarItem
+          icon={<Settings size={20} />} text="Skin Disease Detection" isBeta
+          active={activeItem === 'skin-prediction'} onClick={() => handleNavigation('/skin-prediction')}
+         />
+          <SidebarItem 
+          icon={<Settings size={20} />} text="Oral Cancer Detection" isBeta
+          active={activeItem === 'oral-prediction'} onClick={() => handleNavigation('/oral-prediction')}
+           />
       </nav>
 
       <div>

@@ -68,7 +68,7 @@ export default function CustomerReports() {
 
 // Reusable Card for both Prescriptions and Reports
 const ItemCard = ({ item, onSelect, type }) => {
-    const doctorName = item.doctorId?.name || 'N/A';
+    const doctorName = item.doctor?.name || 'N/A';
     const title = type === 'Prescription' ? `Prescription from Dr. ${doctorName}` : item.testName || item.title; // Use testName from the new report structure
 
     // --- SAFE DATE PARSING FIX APPLIED HERE ---
@@ -103,7 +103,8 @@ const ItemCard = ({ item, onSelect, type }) => {
 const ItemViewModal = ({ item, userProfile, onClose, type }) => {
     const handlePrint = () => window.print();
     const doctorName = item.doctorId?.name || 'N/A';
-    const doctorSpecialization = item.doctorId?.specialization || 'N/A';
+    const doctorSpecialization = item.doctor?.specialization || 'N/A';
+
     const isPrescription = type === 'Prescription';
 
     // --- SAFE DATE PARSING FIX APPLIED HERE ---

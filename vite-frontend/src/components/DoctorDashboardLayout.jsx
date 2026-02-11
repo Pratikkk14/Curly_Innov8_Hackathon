@@ -57,6 +57,14 @@ function DoctorSidebar({ activeItem, userProfile }) {
         <SidebarItem icon={<Calendar size={20} />} text="Appointments" active={activeItem === 'appointments'} onClick={() => handleNavigation('/doctor/appointments')} />
         <SidebarItem icon={<BookUser size={20} />} text="Prescriptions" active={activeItem === 'prescriptions'} onClick={() => handleNavigation('/doctor/prescriptions')} />
         <SidebarItem icon={<FileText size={20} />} text="Reports" active={activeItem === 'reports'} onClick={() => handleNavigation('/doctor/reports')} />
+        <SidebarItem
+                  icon={<Settings size={20} />} text="Brain Tumor Detection" isBeta
+                  active={activeItem === 'prediction'} onClick={() => handleNavigation('/prediction')}
+                />
+          <SidebarItem
+                  icon={<Settings size={20} />} text="Skin Disease Detection" isBeta
+                  active={activeItem === 'skin-prediction'} onClick={() => handleNavigation('/skin-prediction')}
+                />
       </nav>
 
       <div>
